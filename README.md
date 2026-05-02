@@ -2,6 +2,8 @@
 
 > 🧠 **An AI-native action layer for the entire web.** Save, compare, track, annotate, summarize, translate, rank, filter, and extract structured data from *any* page — with rules that re-apply automatically every time you visit.
 
+![Demo](./demo.gif)
+
 <p align="center">
   <em>Chrome Extension (MV3) &nbsp;·&nbsp; Next.js 16 dashboard &nbsp;·&nbsp; Supabase &nbsp;·&nbsp; AI SDK 6 &nbsp;·&nbsp; OpenAI / Anthropic / Vercel AI Gateway</em>
 </p>
