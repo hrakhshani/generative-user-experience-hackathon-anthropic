@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>UWAL — Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="head">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <h1>UWAL Settings</h1>
+        </div>
+        <p class="muted">
+          Connect this extension to your UWAL workspace. Generate a token in your dashboard under
+          <em>Settings → Workspace tokens</em>.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>Connection</h2>
+
+        <div class="field">
+          <label for="apiBase">API base URL</label>
+          <input id="apiBase" type="url" placeholder="https://your-uwal-app.vercel.app" />
+          <p class="hint">The origin where the UWAL dashboard is hosted.</p>
+        </div>
+
+        <div class="field">
+          <label for="token">Workspace token</label>
+          <input id="token" type="password" placeholder="uwal_..." autocomplete="off" />
+          <p class="hint">Stored locally in this browser only. Never exposed to web pages.</p>
+        </div>
+
+        <div class="row">
+          <button id="test" class="btn">Test connection</button>
+          <button id="save" class="btn btn-primary">Save</button>
+        </div>
+
+        <div id="result" class="result hidden"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>AI providers</h2>
+          <span class="card-eyebrow">Optional</span>
+        </div>
+        <p class="muted card-lede">
+          UWAL uses the Vercel AI Gateway by default. If the gateway is unavailable
+          (no card on file), paste a provider key below to bill directly to your own
+          account. Keys live only in this browser.
+        </p>
+
+        <div class="provider">
+          <div class="provider-head">
+            <div class="provider-title">
+              <span class="provider-name">Anthropic</span>
+              <span class="provider-meta">Claude · chat &amp; generation</span>
+            </div>
+            <span class="pill" id="anthropicPill" data-state="gateway">
+              <span class="pill-dot" aria-hidden="true"></span>
+              <span class="pill-text">Gateway</span>
+            </span>
+          </div>
+          <div class="field field-tight">
+            <label for="anthropicKey" class="sr-only">Anthropic API key</label>
+            <input id="anthropicKey" type="password" placeholder="sk-ant-..." autocomplete="off" spellcheck="false" />
+          </div>
+          <p class="hint">
+            Sent as <code>X-Anthropic-Key</code>. Generate a key at
+            <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a>.
+          </p>
+        </div>
+
+        <div class="provider">
+          <div class="provider-head">
+            <div class="provider-title">
+              <span class="provider-name">OpenAI</span>
+              <span class="provider-meta">Embeddings · Rank &amp; Filter rules</span>
+            </div>
+            <span class="pill" id="openaiPill" data-state="gateway">
+              <span class="pill-dot" aria-hidden="true"></span>
+              <span class="pill-text">Gateway</span>
+            </span>
+          </div>
+          <div class="field field-tight">
+            <label for="openaiKey" class="sr-only">OpenAI API key</label>
+            <input id="openaiKey" type="password" placeholder="sk-..." autocomplete="off" spellcheck="false" />
+          </div>
+          <p class="hint">
+            Sent as <code>X-OpenAI-Key</code>. Uses <code>text-embedding-3-small</code> (~$0.02 / 1M tokens). Generate a key at
+            <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">platform.openai.com</a>.
+          </p>
+        </div>
+
+        <div class="row">
+          <button id="clearKey" class="btn">Clear all</button>
+          <button id="saveKey" class="btn btn-primary">Save keys</button>
+        </div>
+
+        <div id="keyResult" class="result hidden"></div>
+      </section>
+
+      <section class="card">
+        <h2>About</h2>
+        <p class="muted">
+          UWAL adds a universal action layer to any website. Use the floating toolbar or the smart
+          selection menu to save objects, extract structured data, compare items, annotate, track
+          changes, and summarize content.
+        </p>
+        <ul class="kbd-list">
+          <li><span class="kbd">Alt</span><span>+</span><span class="kbd">U</span><span>Toggle the floating toolbar</span></li>
+          <li><span class="kbd">Alt</span><span>+</span><span class="kbd">S</span><span>Save the current page</span></li>
+          <li><span class="kbd">Alt</span><span>+</span><span class="kbd">P</span><span>Pick an element to act on</span></li>
+        </ul>
+      </section>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

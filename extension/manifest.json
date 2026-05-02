@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "UWAL — Universal Web Action Layer",
+  "version": "0.1.0",
+  "description": "Save, compare, track, annotate, summarize, and extract structured data from any web page.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "UWAL"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "toggle-toolbar": {
+      "suggested_key": {
+        "default": "Alt+U",
+        "mac": "Alt+U"
+      },
+      "description": "Toggle the UWAL floating toolbar"
+    },
+    "save-page": {
+      "suggested_key": {
+        "default": "Alt+S",
+        "mac": "Alt+S"
+      },
+      "description": "Save the current page as a UWAL object"
+    },
+    "pick-element": {
+      "suggested_key": {
+        "default": "Alt+P",
+        "mac": "Alt+P"
+      },
+      "description": "Pick an element on the page to act on"
+    }
+  }
+}

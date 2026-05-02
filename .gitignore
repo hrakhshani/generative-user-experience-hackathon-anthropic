@@ -1,0 +1,21 @@
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+.vercel/
+next.user-config.*
+
+# Environment variables — block every variant so a stray `.env`,
+# `.env.production`, or editor-renamed copy can't be committed by
+# accident. The only env file allowed in the repo is `.env.example`,
+# which contains placeholder values and is whitelisted below.
+.env
+.env.*
+!.env.example
+
+# Common ignores
+node_modules
+.next/
+.DS_Store
