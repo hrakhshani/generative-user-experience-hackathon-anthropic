@@ -1,6 +1,6 @@
 # UWAL - Universal Web Action Layer
 
-UWAL turns any website into an AI-powered workspace. It lets users select live page elements, save them as structured objects, compare similar items, summarize or translate content, track changes, annotate pages, and re-run saved actions automatically when they return.
+Our idea, called Generative User Experience, is to give users the power to build their own features when visiting different websites.
 
 <p align="center">
   <a href="https://v0-web-action-layer.vercel.app/"><strong>Live app</strong></a>
