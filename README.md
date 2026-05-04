@@ -1,10 +1,31 @@
 # UWAL — Universal Web Action Layer
 
-> 🧠 **An AI-native action layer for the entire web.** Save, compare, track, annotate, summarize, translate, rank, filter, and extract structured data from *any* page — with rules that re-apply automatically every time you visit.
+> Turn any website into an AI-powered workspace. Save, compare, track, annotate, summarize, translate, rank, filter, and extract structured data from any page, then re-apply those actions automatically every time you come back.
 
-**Deployed version:** <https://v0-web-action-layer.vercel.app/>
+<p align="center">
+  <a href="https://v0-web-action-layer.vercel.app/"><strong>Launch deployed app</strong></a>
+  ·
+  <a href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0502-rdhDogYz15ib1Sz47RHWyOUmtc1cja.mp4"><strong>Watch demo video</strong></a>
+  ·
+  <a href="#-quick-start"><strong>Run locally</strong></a>
+</p>
 
-<video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0502-rdhDogYz15ib1Sz47RHWyOUmtc1cja.mp4" controls muted playsinline width="100%"></video>
+<p align="center">
+  <a href="https://v0-web-action-layer.vercel.app/">
+    <img alt="Live demo" src="https://img.shields.io/badge/Live%20Demo-Open%20App-111827?style=for-the-badge&logo=vercel">
+  </a>
+  <a href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0502-rdhDogYz15ib1Sz47RHWyOUmtc1cja.mp4">
+    <img alt="Demo video" src="https://img.shields.io/badge/Demo%20Video-Watch%20MP4-ef4444?style=for-the-badge">
+  </a>
+</p>
+
+## 🎥 Demo
+
+GitHub and some package registries do not reliably play externally hosted MP4 files inside README HTML. Use the direct video link below if the embedded preview does not render in your viewer.
+
+https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0502-rdhDogYz15ib1Sz47RHWyOUmtc1cja.mp4
+
+**Live deployment:** <https://v0-web-action-layer.vercel.app/>
 
 <p align="center">
   <em>Chrome Extension (MV3) &nbsp;·&nbsp; Next.js 16 dashboard &nbsp;·&nbsp; Supabase &nbsp;·&nbsp; AI SDK 6 &nbsp;·&nbsp; OpenAI / Anthropic / Vercel AI Gateway</em>
@@ -19,13 +40,55 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-blue">
 </p>
 
+## Contents
+
+- [Demo](#-demo)
+- [Why UWAL?](#-why-uwal)
+- [What makes it different?](#-what-makes-it-different)
+- [What you get out of the box](#-what-you-get-out-of-the-box)
+- [Example workflows](#-example-workflows)
+- [Quick start](#-quick-start)
+- [Architecture](#-architecture)
+- [API reference](#-api-reference-high-level)
+
 ---
 
 ## ✨ Why UWAL?
 
-Today, every product team that wants to *do something useful* on top of someone else's web page builds **the same thing from scratch**: a content script, an MV3 service worker, an LLM proxy, a Supabase auth flow, a "remember the selector for next time" engine. UWAL is that platform — open, tokenable, AI-native, and yours to host.
+Most web AI tools stop at chat. UWAL goes further: it lets users point at real page elements, run useful actions on them, and save those actions as repeatable page rules.
 
-> 💼 **For enterprise & big tech:** UWAL is a **horizontal browser-side action layer** with strong primitives for **structured extraction**, **semantic ranking**, **semantic filtering**, **change tracking**, and **multi-item AI comparison** — the building blocks of modern browser agents, vertical sales-tools, e-commerce co-pilots, market intelligence, RAG ingestion, and competitive monitoring. Drop it into a workspace, get a fleet-ready browser action layer with audit trails, RLS, and per-user keys.
+Product teams usually rebuild the same browser-side stack every time they need this:
+
+- A content script that can safely understand page structure
+- A visual picker for selecting cards, rows, listings, posts, and tables
+- An LLM proxy with structured outputs
+- A dashboard for saved objects, rules, tokens, and auditability
+- A persistence layer that survives reloads, SPAs, React re-renders, and infinite scroll
+
+UWAL packages that into one open, hostable action layer.
+
+> **For enterprise and platform teams:** UWAL is a horizontal browser-side action layer for structured extraction, semantic ranking, semantic filtering, change tracking, and multi-item AI comparison. It gives browser agents, sales tools, e-commerce copilots, market-intelligence workflows, RAG ingestion pipelines, and competitive-monitoring systems the same reliable primitives.
+
+## 🧠 The product in one sentence
+
+UWAL is a programmable browser companion that lets people and agents act on the live web as if every page had an API.
+
+| For users | For teams | For agents |
+|---|---|---|
+| Turn messy pages into usable workspaces. | Ship browser-side AI workflows without rebuilding the extension/backend stack. | Get stable primitives for selecting, extracting, ranking, comparing, and persisting web context. |
+
+---
+
+## ⚡ What makes it different?
+
+| Capability | Why it matters |
+|---|---|
+| **Point at anything** | Users work directly on page elements instead of copying text into a chatbot. |
+| **Rules that come back** | Save an action once and run it again automatically when the matching page loads. |
+| **Element-aware AI** | The extension sends structured element context, not just loose page text. |
+| **Side-by-side comparison** | Select 2-8 items and get a table, verdict, and top pick in seconds. |
+| **Hostable stack** | Next.js, Supabase, Vercel Blob, AI SDK, and MV3 extension code you control. |
+| **BYO model keys** | Use Vercel AI Gateway by default or bring OpenAI / Anthropic keys per user. |
 
 ---
 
@@ -44,6 +107,28 @@ Today, every product team that wants to *do something useful* on top of someone 
 | 🗂️ **Structured Extraction** | LLM-powered "give me JSON of every product on this listing page". |
 | 🏷️ **Annotate** | Highlight, comment, and tag any region of any page. |
 | 🔐 **Per-user API tokens** | Workspace tokens with Supabase RLS — bring-your-own-key OpenAI / Anthropic supported. |
+
+---
+
+## 🧭 Example workflows
+
+| Page type | What UWAL can do |
+|---|---|
+| Job boards | Filter roles by seniority, rank by fit, compare compensation, save promising listings. |
+| Product grids | Compare prices, specs, reviews, delivery times, and return policies across cards. |
+| News feeds | Summarize articles, cluster themes, track updates, extract structured claims. |
+| Real estate | Rank listings by commute, budget, amenities, neighborhood signals, and tradeoffs. |
+| Market research | Extract competitor claims, track page changes, annotate evidence, build RAG-ready records. |
+
+---
+
+## 🕹️ 60-second demo path
+
+1. Open any page with repeated items: jobs, products, apartments, articles, search results.
+2. Press `Alt+U` to bring up the UWAL action layer.
+3. Select one card, then choose whether to target similar items.
+4. Run `Filter`, `Rank`, `Summarize`, `Translate`, `Save`, or `Compare`.
+5. Reload the page and watch the saved rule apply again automatically.
 
 ---
 
@@ -128,7 +213,15 @@ Today, every product team that wants to *do something useful* on top of someone 
 
 ## 🔧 Quick start
 
-### 1. Clone & install
+### Option A: Open the deployed app
+
+Start with the hosted dashboard:
+
+<https://v0-web-action-layer.vercel.app/>
+
+### Option B: Run locally
+
+#### 1. Clone & install
 
 ```bash
 git clone https://github.com/your-org/uwal.git
@@ -136,7 +229,7 @@ cd uwal
 pnpm install
 ```
 
-### 2. Set environment variables
+#### 2. Set environment variables
 
 Create `.env.local`:
 
@@ -155,7 +248,7 @@ AI_GATEWAY_API_KEY=...        # Vercel AI Gateway (recommended)
 BLOB_READ_WRITE_TOKEN=...
 ```
 
-### 3. Run the dashboard
+#### 3. Run the dashboard
 
 ```bash
 pnpm dev
@@ -163,7 +256,7 @@ pnpm dev
 
 Open <http://localhost:3000>, sign up, and create a **workspace token** in **Settings**.
 
-### 4. Load the Chrome extension
+#### 4. Load the Chrome extension
 
 1. Go to `chrome://extensions` → enable **Developer mode**
 2. Click **Load unpacked** → pick the `extension/` folder
