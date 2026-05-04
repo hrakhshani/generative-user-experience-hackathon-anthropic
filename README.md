@@ -2,7 +2,9 @@
 
 > 🧠 **An AI-native action layer for the entire web.** Save, compare, track, annotate, summarize, translate, rank, filter, and extract structured data from *any* page — with rules that re-apply automatically every time you visit.
 
-![Demo](./demo.gif)
+**Deployed version:** <https://v0-web-action-layer.vercel.app/>
+
+<video src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0502-rdhDogYz15ib1Sz47RHWyOUmtc1cja.mp4" controls muted playsinline width="100%"></video>
 
 <p align="center">
   <em>Chrome Extension (MV3) &nbsp;·&nbsp; Next.js 16 dashboard &nbsp;·&nbsp; Supabase &nbsp;·&nbsp; AI SDK 6 &nbsp;·&nbsp; OpenAI / Anthropic / Vercel AI Gateway</em>
