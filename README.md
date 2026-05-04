@@ -19,7 +19,18 @@ UWAL turns any website into an AI-powered workspace. It lets users select live p
   <img alt="License" src="https://img.shields.io/badge/license-MIT-blue">
 </p>
 
-![UWAL demo](demo.gif)
+<p align="center">
+  <video
+    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0502-rdhDogYz15ib1Sz47RHWyOUmtc1cja.mp4"
+    controls
+    muted
+    playsinline
+    width="100%"
+    aria-label="UWAL demo video"
+  >
+    <a href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0502-rdhDogYz15ib1Sz47RHWyOUmtc1cja.mp4">Watch the UWAL demo video</a>
+  </video>
+</p>
 
 ## Contents
 
